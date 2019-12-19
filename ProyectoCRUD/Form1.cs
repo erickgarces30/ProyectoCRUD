@@ -41,13 +41,22 @@ namespace ProyectoCRUD
                 MessageBox.Show(ex.Message.ToString());
             }
 
-          
+            cargarGridEstudiantes();
 
         }
 
         private void txtCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cargarGridEstudiantes();
+        }
+        private void cargarGridEstudiantes()
+        {
+            this.dgEstudiantes.DataSource = Academico.EstudianteDAO.getDatos();
         }
     }
 }
