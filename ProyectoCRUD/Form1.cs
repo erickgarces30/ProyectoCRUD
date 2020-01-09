@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,8 +26,15 @@ namespace ProyectoCRUD
             estudiante.Apellidos = this.txtApellido.Text;
             estudiante.Nombres = this.txtNombres.Text;
             estudiante.FechaNacimiento = this.dtFechaNacimiento.Value;
-            estudiante.Correo = this.txtCorreo.Text;
             string genero = "F";
+            if (Academico.EstudianteDAO.validarEmail(this.txtCorreo.Text) == false)
+            {
+                MessageBox.Show("Dirección de correo no valida", "Validación de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                estudiante.Correo = this.txtCorreo.Text;
+            }
             if(this.cmbGenero.Text.ToString().Equals("Masculino"))
             {
                 genero = "M";
@@ -44,7 +52,7 @@ namespace ProyectoCRUD
             cargarGridEstudiantes();
 
         }
-
+        
         private void txtCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -57,6 +65,16 @@ namespace ProyectoCRUD
         private void cargarGridEstudiantes()
         {
             this.dgEstudiantes.DataSource = Academico.EstudianteDAO.getDatos();
+        }
+
+        private void txtCorreo_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
