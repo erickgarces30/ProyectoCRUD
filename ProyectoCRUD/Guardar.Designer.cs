@@ -1,6 +1,6 @@
 ﻿namespace ProyectoCRUD
 {
-    partial class Form1
+    partial class Guardar
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -190,7 +190,7 @@
             this.dgEstudiantes.Size = new System.Drawing.Size(528, 150);
             this.dgEstudiantes.TabIndex = 15;
             // 
-            // Form1
+            // Guardar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +211,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Guardar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de estudiantes";
             this.Load += new System.EventHandler(this.Form1_Load);

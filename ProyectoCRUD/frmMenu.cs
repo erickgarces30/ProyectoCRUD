@@ -22,7 +22,7 @@ namespace ProyectoCRUD
         private void ShowNewForm(object sender, EventArgs e)
         {
             //llamada al form para agregar nuevos registros
-            Form1 frm1 = new Form1();
+            Guardar frm1 = new Guardar();
             frm1.MdiParent = this;
             frm1.Show();
         }

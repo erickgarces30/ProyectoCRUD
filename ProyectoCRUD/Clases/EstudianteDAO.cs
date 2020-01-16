@@ -17,9 +17,10 @@ namespace Academico
        /// <summary>
        /// metodo gaurdar
        /// </summary>
-       /// <param name="estudiante"></param>
+       /// <param name="Actualizar"></param>
        /// <returns></returns>
-        public static int guardar(Estudiante estudiante)
+      
+         public static int guardar(Estudiante estudiante)
         {
             
             SqlConnection conn = new SqlConnection(cadenaConexion);
@@ -132,6 +133,29 @@ namespace Academico
             {
                 return true;
             }
+        }
+        public static int actualizar(Estudiante estudiante)
+        {
+
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "UPDATE estudiantes SET apellidos=@apellidos, nombres=@nombres, genero=@genero," +
+                " fechaNacimiento=@fechaNacimiento,email=@email WHERE matricula=@matricula";
+
+            //Definimos un comando
+            SqlCommand comando = new SqlCommand(sql, conn);
+            //configuramos los parámetros
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.Parameters.AddWithValue("@matricula", estudiante.Matricula);
+            comando.Parameters.AddWithValue("@apellidos", estudiante.Apellidos);
+            comando.Parameters.AddWithValue("@nombres", estudiante.Nombres);
+            comando.Parameters.AddWithValue("@genero", estudiante.Genero);
+            comando.Parameters.AddWithValue("@fechaNacimiento", estudiante.FechaNacimiento.Date);
+            comando.Parameters.AddWithValue("@email", estudiante.Correo);
+            conn.Open();
+            int x = comando.ExecuteNonQuery(); //Ejeutamos el comando
+            conn.Close();
+
+            return x;
         }
     }   
 }
