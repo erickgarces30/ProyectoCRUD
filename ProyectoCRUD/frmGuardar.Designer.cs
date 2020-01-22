@@ -1,6 +1,6 @@
 ﻿namespace ProyectoCRUD
 {
-    partial class Guardar
+    partial class frmGuardar
     {
         /// <summary>
         /// Variable del diseñador necesaria.

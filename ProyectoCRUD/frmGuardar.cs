@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProyectoCRUD
 {
-    public partial class Guardar : Form
+    public partial class frmGuardar : Form
     {
-        public Guardar()
+        public frmGuardar()
         {
             InitializeComponent();
         }

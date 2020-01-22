@@ -1,16 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoCRUD.Clases
+namespace Academico
 {
-    class UsuariosDAO
+    public static class UsuariosDAO
     {
-        public int idLogin { get; set; }
-        public int nombreCompleto { get; set; }
-        public int login { get; set; }
-        public int clave { get; set; }
+        private static string cadenaConexion = @"server=ERICK\SQLEXPRESS2016; database=TI2019; user id=sa; password=Lab123456;";
+
+        public static bool validaUsuaruio(string usuario, string clave)
+        {
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "select idLogin,nombreCompleto from usuarios where login=@login and clave=@clave";
+
+
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            ad.SelectCommand.Parameters.AddWithValue("@login", usuario);
+            ad.SelectCommand.Parameters.AddWithValue("@clave", clave);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }

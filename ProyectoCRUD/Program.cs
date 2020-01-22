@@ -18,7 +18,8 @@ namespace ProyectoCRUD
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //Application.Run(new frmBorrar());
-            Application.Run(new frmMenu ());
+            //Application.Run(new frmMenu ());
+            Application.Run(new frmLogin());
         }
     }
 }
