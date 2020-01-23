@@ -28,5 +28,37 @@ namespace Academico
             else
                 return false;
         }
+        public static int guardar(Usuarios usuarios)
+        {
+
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "insert into Usuarios(nombreCompleto, login, clave, tipoUsuario)" +
+                " values(@nombreCompleto,@login,@clave,@tipoUsuario)";
+
+            //Definimos un comando
+            SqlCommand comando = new SqlCommand(sql, conn);
+            //configuramos los parámetros
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.Parameters.AddWithValue("@nombreCompleto", usuarios.nombreCompleto);
+            comando.Parameters.AddWithValue("@login", usuarios.login);
+            comando.Parameters.AddWithValue("@clave", usuarios.clave);
+            comando.Parameters.AddWithValue("@tipoUsuario", usuarios.tipoUsuario);
+            conn.Open();
+            int x = comando.ExecuteNonQuery(); //Ejeutamos el comando
+            conn.Close();
+
+            return x;
+        }
+        public static DataTable getDatos()
+        {
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "select idLogin, nombreCompleto, login, clave, tipoUsuario " +
+                "from Usuarios order by nombreCompleto";
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            DataTable dt = new DataTable();
+            ad.Fill(dt); //llena el dataTable dt
+
+            return dt;
+        }
     }
 }

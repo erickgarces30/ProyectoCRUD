@@ -12,8 +12,6 @@ namespace ProyectoCRUD
 {
     public partial class frmMenu : Form
     {
-        private int childFormNumber = 0;
-
         public frmMenu()
         {
             InitializeComponent();
@@ -119,6 +117,13 @@ namespace ProyectoCRUD
         private void editMenu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProyectoAdm.frmUsuarios frm1 = new ProyectoAdm.frmUsuarios();
+            frm1.MdiParent = this;
+            frm1.Show();
         }
     }
 }
