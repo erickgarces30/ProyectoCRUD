@@ -92,28 +92,28 @@
             this.txtID.Location = new System.Drawing.Point(151, 48);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(180, 20);
+            this.txtID.Size = new System.Drawing.Size(230, 20);
             this.txtID.TabIndex = 4;
             // 
             // txtNombreCompleto
             // 
             this.txtNombreCompleto.Location = new System.Drawing.Point(151, 88);
             this.txtNombreCompleto.Name = "txtNombreCompleto";
-            this.txtNombreCompleto.Size = new System.Drawing.Size(180, 20);
+            this.txtNombreCompleto.Size = new System.Drawing.Size(505, 20);
             this.txtNombreCompleto.TabIndex = 5;
             // 
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(151, 129);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(180, 20);
+            this.txtLogin.Size = new System.Drawing.Size(505, 20);
             this.txtLogin.TabIndex = 6;
             // 
             // txtClave
             // 
             this.txtClave.Location = new System.Drawing.Point(151, 166);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(180, 20);
+            this.txtClave.Size = new System.Drawing.Size(505, 20);
             this.txtClave.TabIndex = 7;
             // 
             // label5
@@ -133,7 +133,7 @@
             "Secretaria"});
             this.cmbTipoUsuario.Location = new System.Drawing.Point(151, 203);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
-            this.cmbTipoUsuario.Size = new System.Drawing.Size(180, 21);
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(505, 21);
             this.cmbTipoUsuario.TabIndex = 9;
             // 
             // dgUsuarios
@@ -144,8 +144,11 @@
             this.dgUsuarios.Location = new System.Drawing.Point(36, 278);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(299, 150);
+            this.dgUsuarios.Size = new System.Drawing.Size(620, 150);
             this.dgUsuarios.TabIndex = 10;
+            this.dgUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellClick);
+            this.dgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellContentClick);
+            this.dgUsuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgUsuarios_CellPainting);
             // 
             // toolStrip1
             // 
@@ -157,7 +160,7 @@
             this.btnCerrar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(365, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(678, 25);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -211,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 445);
+            this.ClientSize = new System.Drawing.Size(678, 445);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgUsuarios);

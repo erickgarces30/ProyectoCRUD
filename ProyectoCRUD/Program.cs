@@ -19,7 +19,8 @@ namespace ProyectoCRUD
             //Application.Run(new Form1());
             //Application.Run(new frmBorrar());
             //Application.Run(new frmMenu ());
-            Application.Run(new frmLogin());
+            Application.Run(new ProyectoAdm.frmUsuarios());
+            
         }
     }
 }

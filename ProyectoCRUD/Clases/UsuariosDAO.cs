@@ -60,5 +60,49 @@ namespace Academico
 
             return dt;
         }
+
+        public static int borrar(String id)
+        {
+            //definimos una objeto conexión
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+
+            string sql = "delete from usuarios " +
+                "where idLogin=@idLogin";
+
+            //definimos un comando
+            SqlCommand comando = new SqlCommand(sql, conn);
+            //configuramos los parametros
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.Parameters.AddWithValue("@idLogin", id);
+            conn.Open();
+            int x = comando.ExecuteNonQuery();//ejecutamos el comando
+            conn.Close();
+            return x;
+
+        }
+
+        public static int actualizar(Usuarios usuarios)
+        {
+
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+            string sql = "UPDATE usuarios SET nombreCompleto=@nombreCompleto, login=@login," +
+                " clave=@clave,tipoUsuario=@tipoUsuario" +
+                " WHERE idLogin=@idLogin";
+
+            //Definimos un comando
+            SqlCommand comando = new SqlCommand(sql, conn);
+            //configuramos los parámetros
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.Parameters.AddWithValue("@idLogin", usuarios.idLogin);
+            comando.Parameters.AddWithValue("@nombreCompleto", usuarios.nombreCompleto);
+            comando.Parameters.AddWithValue("@login", usuarios.login);
+            comando.Parameters.AddWithValue("@clave", usuarios.clave);
+            comando.Parameters.AddWithValue("@tipoUsuario", usuarios.tipoUsuario);
+            conn.Open();
+            int x = comando.ExecuteNonQuery(); //Ejeutamos el comando
+            conn.Close();
+
+            return x;
+        }
     }
 }
