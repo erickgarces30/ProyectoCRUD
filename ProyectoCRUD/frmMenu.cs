@@ -61,12 +61,12 @@ namespace ProyectoCRUD
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,6 +122,25 @@ namespace ProyectoCRUD
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProyectoAdm.frmUsuarios frm1 = new ProyectoAdm.frmUsuarios();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProyectoCRUD.informes.frmInformeEstudiantes frm1 = new ProyectoCRUD.informes.frmInformeEstudiantes();
+            frm1.MdiParent = this;
+            frm1.Show();
+        }
+
+        private void informeDeRecordAcademicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void informesXdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+               frmRecordAcad_selEstudiante frm1 = new frmRecordAcad_selEstudiante();
             frm1.MdiParent = this;
             frm1.Show();
         }

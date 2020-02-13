@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsEstudiantes = new ProyectoCRUD.ds.dsEstudiantes();
-            this.dsEstudiantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estudiantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsEstudiantes = new ProyectoCRUD.ds.dsEstudiantes();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dsEstudiantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estudiantesTableAdapter = new ProyectoCRUD.ds.dsEstudiantesTableAdapters.estudiantesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEstudiantesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // estudiantesBindingSource
+            // 
+            this.estudiantesBindingSource.DataMember = "estudiantes";
+            this.estudiantesBindingSource.DataSource = this.dsEstudiantes;
+            // 
+            // dsEstudiantes
+            // 
+            this.dsEstudiantes.DataSetName = "dsEstudiantes";
+            this.dsEstudiantes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -54,20 +64,10 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // dsEstudiantes
-            // 
-            this.dsEstudiantes.DataSetName = "dsEstudiantes";
-            this.dsEstudiantes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dsEstudiantesBindingSource
             // 
             this.dsEstudiantesBindingSource.DataSource = this.dsEstudiantes;
             this.dsEstudiantesBindingSource.Position = 0;
-            // 
-            // estudiantesBindingSource
-            // 
-            this.estudiantesBindingSource.DataMember = "estudiantes";
-            this.estudiantesBindingSource.DataSource = this.dsEstudiantes;
             // 
             // estudiantesTableAdapter
             // 
@@ -80,11 +80,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformeEstudiantes";
-            this.Text = "frmInformeEstudiantes";
+            this.Text = "Reporte de Estudiantes";
             this.Load += new System.EventHandler(this.frmInformeEstudiantes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEstudiantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEstudiantesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

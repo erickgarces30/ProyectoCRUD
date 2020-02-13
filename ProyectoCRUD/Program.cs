@@ -20,8 +20,8 @@ namespace ProyectoCRUD
             //Application.Run(new frmBorrar());
             //Application.Run(new frmMenu ());
             //Application.Run(new ProyectoAdm.frmUsuarios());
-            //Application.Run(new frmLogin());
-            Application.Run(new informes.frmInformeEstudiantes());
+            Application.Run(new frmLogin());
+            //Application.Run(new informes.frmInformeEstudiantes());
         }
     }
-//}
+}

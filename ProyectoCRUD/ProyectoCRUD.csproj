@@ -73,6 +73,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsEstudiantes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ds\dsNotas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignaturas.Designer.cs">
+      <DependentUpon>frmAsignaturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGuardar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +120,12 @@
     <Compile Include="informes\frmInformeEstudiantes.Designer.cs">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="informes\frmRecordAcad_Mostrarrecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="informes\frmRecordAcad_Mostrarrecord.Designer.cs">
+      <DependentUpon>frmRecordAcad_Mostrarrecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmLogin.cs">
@@ -117,9 +134,18 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecordAcad_selEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordAcad_selEstudiante.Designer.cs">
+      <DependentUpon>frmRecordAcad_selEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Adm\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignaturas.resx">
+      <DependentUpon>frmAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGuardar.resx">
       <DependentUpon>frmGuardar.cs</DependentUpon>
@@ -139,7 +165,12 @@
     <EmbeddedResource Include="informes\frmInformeEstudiantes.resx">
       <DependentUpon>frmInformeEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="informes\frmRecordAcad_Mostrarrecord.resx">
+      <DependentUpon>frmRecordAcad_Mostrarrecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informes\informePersonal.rdlc" />
     <EmbeddedResource Include="informes\rptEstudiantes.rdlc" />
+    <EmbeddedResource Include="informes\rptRecordAcademico.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -153,6 +184,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordAcad_selEstudiante.resx">
+      <DependentUpon>frmRecordAcad_selEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ds\dsEstudiantes.xsc">
       <DependentUpon>dsEstudiantes.xsd</DependentUpon>
     </None>
@@ -163,6 +197,17 @@
     </None>
     <None Include="ds\dsEstudiantes.xss">
       <DependentUpon>dsEstudiantes.xsd</DependentUpon>
+    </None>
+    <None Include="ds\dsNotas.xsc">
+      <DependentUpon>dsNotas.xsd</DependentUpon>
+    </None>
+    <None Include="ds\dsNotas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ds\dsNotas.xss">
+      <DependentUpon>dsNotas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
